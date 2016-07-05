@@ -1,7 +1,7 @@
 {
-  "name": "vulgar",
-  "version": "2.0.4",
-  "description": "A simple and scalable MEAN stack development kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage, Dev/Prod), Express, MongoDB, Mongoose, Node, Redux, @ngrx/store,  PassportJS, Socket.io, Karma, Protractor, Jasmine, Istanbul, SASS Support, TypeScript, TSLint, NG2Lint, Hot Module Replacement, Docco, Gulp, and Webpack by @datatype_void",
+  "name": "thiagosil",
+  "version": "0.0.1",
+  "description": "lol guide search",
   "keywords": [
     "angular2",
     "webpack",
@@ -10,8 +10,8 @@
     "express",
     "mongodb"
   ],
-  "author": "David Newman <blackshuriken@hotmail.com>",
-  "homepage": "https://github.com/datatypevoid/vulgar",
+  "author": "Thiago Assis",
+  "homepage": "https://github.com/thiagosil/bard",
   "license": "MIT",
   "scripts": {
     "rimraf": "rimraf",
@@ -174,10 +174,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/datatypevoid/vulgar.git"
+    "url": "https://github.com/thiagosil/bard.git"
   },
   "bugs": {
-    "url": "https://github.com/datatypevoid/vulgar/issues"
+    "url": "https://github.com/thiagosil/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
