@@ -1,0 +1,29 @@
+<section class="hero-section">
+  <div class="container">
+    <h1>Lol Guide Index</h1>
+    <input [(ngModel)]="championName" (keyup)="filterChampions(championName)"
+      class="hero-searchbar form-control ap-input" placeholder="Quer jogar com quem?">
+
+
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="container">
+    <h2>Champions</h2>
+
+    <ul class="heroes">
+      <li *ngFor="let champion of champions">
+        <div class="fl-left bloc-3">
+          <a [href]="championService.getLolKingUrl(champion.key)">
+            <img [src]="championService.getImageUrl(champion.key)">
+          </a>
+        </div>
+
+      </li>
+    </ul>
+
+  </div>
+</section>

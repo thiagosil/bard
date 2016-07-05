@@ -1,0 +1,173 @@
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+section.hero-section {
+    background: #3a5395;
+    color: #fff;
+    padding-top: 75px;
+}
+
+section {
+    min-height: 550px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.marketing-section .container {
+    position: absolute;
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+    max-width: 940px;
+    float: none;
+}
+
+bloc-3 {
+
+}
+
+section .bloc-3 img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    float: none;
+    padding: 0 16px 16px;
+    max-width: 140px;
+}
+
+.fl-left {
+    float: left;
+}
+.bloc-3 {
+    width: 15%;
+}
+
+section.hero-section {
+    background: #3a5395;
+    color: #fff;
+    padding-top: 75px;
+}
+section {
+    min-height: 550px;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.hero-section .hero-searchbar {
+    border: solid 1px rgba(255,255,255,0.5);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.2),0 2px 4px 0 rgba(0,0,0,0.1);
+    color: #8f94ad;
+    font-family: "Raleway", Helvetica Neue, helvetica;
+    height: 56px;
+    padding-left: 16px;
+    padding-right: 48px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 16px;
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    outline: none;
+}
+
+.ap-input, .ap-hint {
+    width: 100%;
+    padding-right: 35px;
+    padding-left: 16px;
+    line-height: 40px;
+    height: 40px;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    outline: none;
+    font: inherit;
+}
+
+section.hero-section .container {
+    margin-top: 40px;
+}
+.container {
+    margin: auto;
+    width: 100%;
+    max-width: 940px;
+    float: none;
+}
+
+section.hero-section {
+    background: #3a5395;
+    color: #fff;
+    padding-top: 75px;
+}
+
+section.hero-section h1 {
+    line-height: 22px;
+    padding: 16px 0;
+    margin-top: 32px;
+
+}
+h1 {
+    font-size: 46px;
+}
+
+body.index section.hero-section .relative {
+    display: block;
+}
+
+.marketing-section .bloc-3 img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    float: none;
+    padding: 0 16px 16px;
+    max-width: 140px;
+}
+
+* {
+  font-family: "Raleway", Helvetica Neue, helvetica;
+}
