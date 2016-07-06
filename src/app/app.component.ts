@@ -61,7 +61,7 @@ import {Champion} from './champion/champion.component';
   { path: '/redux', component: Recipes, name: 'Recipes' },
   // Async load a component using Webpack's require with
   // es6-promise-loader and webpack `require`
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
+  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])
 export class App {
   angularLogo = 'assets/img/angular-logo.png';
