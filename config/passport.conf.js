@@ -115,6 +115,9 @@ export default (passport) => {
 
   (req, username, password, done) => {
 
+    console.log(username);
+    console.log(password);
+
     // ## Data Checks
 
     // If the length of the username string is too long/short,
@@ -151,39 +154,6 @@ export default (passport) => {
       );
     }
 
-    // If the length of the email string is too long/short,
-    // invoke verify callback
-    if(!checkLength(req.body.email, bounds.email.minLength, bounds.email.maxLength)) {
-
-      // ### Verify Callback
-
-      // Invoke `done` with `false` to indicate authentication
-      // failure
-      return done(null,
-
-        false,
-
-        // Return info message object
-        { signupMessage : 'Invalid email length.' }
-      );
-    }
-
-    // If the string is not a valid email...
-    if(!validateEmail(req.body.email)) {
-
-      // ### Verify Callback
-
-      // Invoke `done` with `false` to indicate authentication
-      // failure
-      return done(null,
-
-        false,
-
-        // Return info message object
-        { signupMessage : 'Invalid email address.' }
-      );
-    }
-
     // Asynchronous
     // User.findOne will not fire unless data is sent back
     process.nextTick(() => {
@@ -198,9 +168,7 @@ export default (passport) => {
         // Model.find `$or` Mongoose condition
         $or : [
 
-          { 'local.username' : username },
-
-          { 'local.email' : req.body.email }
+          { 'local.username' : username }
         ]
       }, (err, user) => {
 
@@ -226,7 +194,7 @@ export default (passport) => {
 
         } else {
 
-          // If there is no user with that email or username...
+          // If there is no user with that username...
 
           // Create the user
           let newUser = new User();
@@ -237,17 +205,18 @@ export default (passport) => {
           // email to lowercase characters
           newUser.local.username = username.toLowerCase();
 
-          newUser.local.email = req.body.email.toLowerCase();
-
           // Hash password with model method
           newUser.local.password = newUser.generateHash(password);
 
+          console.log("CREATING NEW USER");
           // Save the new user
           newUser.save((err) => {
 
             if (err)
+            {
+              console.log(err);
               throw err;
-
+            }
             return done(null, newUser);
           });
         }
@@ -282,7 +251,7 @@ export default (passport) => {
     // Note that the check is against the bounds of the email
     // object. This is because emails can be used to login as
     // well.
-    if(!checkLength(username, bounds.username.minLength, bounds.email.maxLength)) {
+    if(!checkLength(username, bounds.username.minLength)) {
 
       // ### Verify Callback
 
@@ -293,7 +262,7 @@ export default (passport) => {
         false,
 
         // Return info message object
-        { loginMessage : 'Invalid username/email length.' }
+        { loginMessage : 'Invalid username' }
       );
     }
 

@@ -23,9 +23,18 @@
 // Load user model
 import User from '../models/user.model.js';
 
+import config from '../../config/config.json';
+
+var jwt = require('jsonwebtoken'),
+    _   = require('lodash');
+
 // Load the Mongoose ObjectId function to cast string as
 // ObjectId
 let ObjectId = require('mongoose').Types.ObjectId;
+
+function createToken(user) {
+  return jwt.sign(_.omit(user, 'password'), config.SESSION_SECRET, { expiresIn : 60*60*24 });
+}
 
 export default (app, router, passport, auth, admin) => {
 
@@ -71,18 +80,16 @@ export default (app, router, passport, auth, admin) => {
         if (err)
           return next(err);
 
-        // Set HTTP status code `200 OK`
-        res.status(200);
-
         // Return the user object
-        res.send(req.user);
+        res.status(201).send({
+          id_token: createToken(user)
+        });
       });
 
     }) (req, res, next);
   });
 
   router.post('/auth/signup', (req, res, next) => {
-
     // Call `authenticate()` from within the route handler, rather than
     // as a route middleware. This gives the callback access to the `req`
     // and `res` object through closure.
@@ -105,8 +112,9 @@ export default (app, router, passport, auth, admin) => {
         return next(info.signupMessage);
       }
 
-      // Set HTTP status code `204 No Content`
-      res.sendStatus(204);
+      res.status(201).send({
+        id_token: createToken(user)
+      });
 
     }) (req, res, next);
   });
@@ -131,7 +139,7 @@ export default (app, router, passport, auth, admin) => {
   });
 
   // Route to delete a user. Accepts a url parameter in the form of a
-  // username, user email, or mongoose object id.
+  // username or mongoose object id.
   // The `admin` Express middleware was passed in from `routes.js`
   router.delete('/auth/delete/:uid', admin, (req, res) => {
 
@@ -141,8 +149,6 @@ export default (app, router, passport, auth, admin) => {
       $or : [
 
         { 'local.username' : req.params.uid },
-
-        { 'local.email' : req.params.uid },
 
         { '_id' : ObjectId(req.params.uid) }
       ]

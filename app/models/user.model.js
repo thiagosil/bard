@@ -24,9 +24,7 @@ let userSchema = mongoose.Schema({
 
     username : { type : String, unique : true },
 
-    password : String,
-
-    email : { type : String, unique : true }
+    password : String
   },
 
   role : { type : String }
