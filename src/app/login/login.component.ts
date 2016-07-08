@@ -40,14 +40,4 @@ export class Login {
     event.preventDefault();
     this.router.navigate(['/signup']);
   }
-
-  canDeactivate(): boolean {
-    console.log("oi");
-    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
-    if (localStorage.getItem('id_token')) {
-      return true;
-    }
-
-    return false;
-  }
 }
