@@ -35,9 +35,4 @@ export class Login {
         }
       );
   }
-
-  signup(event) {
-    event.preventDefault();
-    this.router.navigate(['/signup']);
-  }
 }

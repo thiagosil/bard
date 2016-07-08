@@ -6,6 +6,8 @@ import {AppState} from './app.service';
 // Import Champion component
 import {Champion} from './champion/champion.component';
 
+import {AuthService} from './auth/auth.service';
+
 /*
  * App Component
  * Top Level Component
@@ -13,11 +15,12 @@ import {Champion} from './champion/champion.component';
 @Component({
   selector: 'app',
   directives: [ROUTER_DIRECTIVES],
-  template: `
-      <router-outlet></router-outlet>
-  `
+  template: require('./app.component.html'),
+  providers: [AuthService]
 })
 
 export class App {
   angularLogo = 'assets/img/angular-logo.png';
+
+  constructor(public authService: AuthService){}
 }
