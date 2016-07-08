@@ -19,10 +19,13 @@ export class Login {
 
   login(event, username, password) {
     event.preventDefault();
+
+    //todo call auth.service
     let body = JSON.stringify({ username, password });
-    this.http.post('http://localhost:3001/sessions/create', body, { headers: contentHeaders })
+    this.http.post('/api/auth/login', body, { headers: contentHeaders })
       .subscribe(
         response => {
+          console.log(response);
           localStorage.setItem('id_token', response.json().id_token);
           this.router.navigate(['/champion']);
         },
@@ -36,5 +39,15 @@ export class Login {
   signup(event) {
     event.preventDefault();
     this.router.navigate(['/signup']);
+  }
+
+  canDeactivate(): boolean {
+    console.log("oi");
+    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+    if (localStorage.getItem('id_token')) {
+      return true;
+    }
+
+    return false;
   }
 }

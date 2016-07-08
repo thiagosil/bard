@@ -11,19 +11,20 @@
 <hr>
 
 <section>
-  <div class="container">
+  <div class="container-fluid">
     <h2>Champions</h2>
 
-    <ul class="heroes">
-      <li *ngFor="let champion of champions">
-        <div class="fl-left bloc-3">
-          <a [href]="championService.getLolKingUrl(champion.key)">
-            <img [src]="championService.getImageUrl(champion.key)">
-          </a>
-        </div>
+    <div class="row">
+      <ul class="heroes">
+        <li *ngFor="let champion of champions">
+          <div class="col-md-2">
+            <a [href]="championService.getLolKingUrl(champion.key)">
+              <img [src]="championService.getImageUrl(champion.key)">
+            </a>
+          </div>
 
-      </li>
-    </ul>
-
+        </li>
+      </ul>
+    </div>
   </div>
 </section>

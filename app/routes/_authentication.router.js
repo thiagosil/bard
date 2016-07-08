@@ -82,7 +82,8 @@ export default (app, router, passport, auth, admin) => {
 
         // Return the user object
         res.status(201).send({
-          id_token: createToken(user)
+          id_token: createToken(user),
+          user: user
         });
       });
 
@@ -113,7 +114,8 @@ export default (app, router, passport, auth, admin) => {
       }
 
       res.status(201).send({
-        id_token: createToken(user)
+        id_token: createToken(user),
+        user: user
       });
 
     }) (req, res, next);
