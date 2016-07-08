@@ -6,8 +6,7 @@ export class AuthService {
 
   constructor(public router: Router) { }
 
-  loggedIn()
-  {
+  loggedIn() {
     if (localStorage.getItem('id_token')) {
       return true;
     }
@@ -16,7 +15,7 @@ export class AuthService {
 
 
   logout() {
-    //TODO REMOVE FROM PASSPORT
+    // TODO REMOVE FROM PASSPORT
     localStorage.removeItem('id_token');
     this.router.navigate(['/champion']);
 

@@ -5,7 +5,7 @@ import { CanActivate, Router } from '@angular/router';
 export class LoginGuard implements CanActivate  {
   constructor(private router: Router) {}
 
-  //If user already logged in, go to the homePage
+  // If user already logged in, go to the homePage
   canActivate() {
     if (localStorage.getItem('id_token')) {
       this.router.navigate(['/champion']);

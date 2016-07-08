@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 // Import NgClass directive
-import {NgClass} from '@angular/common';
+import { NgClass } from '@angular/common';
 
-import {Accordion} from './accordion.component';
+import { Accordion } from './accordion.component';
 
 @Component({
   selector: 'accordion-group, [accordion-group]',

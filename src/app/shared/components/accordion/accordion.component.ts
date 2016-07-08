@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
-import {AccordionGroup} from './accordion-group.component';
+import { AccordionGroup } from './accordion-group.component';
 
 @Component({
   selector: 'accordion, [accordion]',

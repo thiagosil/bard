@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {NgFor} from '@angular/common';
 
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
@@ -10,7 +9,7 @@ import { ChampionService } from './champion.service';
   template: require('./champion.html'),
   providers: [ChampionService],
   directives: [ROUTER_DIRECTIVES],
-  styles: [ require('./champion.css') ],
+  styles: [ require('./champion.css') ]
 })
 
 export class Champion {
@@ -23,23 +22,23 @@ export class Champion {
     this.getChampions();
   }
 
-  private getChampions()
-  {
-    this.championService.getAll()
-      // `Rxjs`; we subscribe to the response
-      .subscribe((res) => {
-
-          // Populate our `Champions` array with the `response` data
-          this.allChampions = res;
-          this.champions = this.allChampions;
-      });
-  }
-
-  filterChampions(championName: string){
-    this.champions = this.allChampions.filter(function (el:any) {
+  filterChampions(championName: string) {
+    this.champions = this.allChampions.filter(function (el: any) {
         return (el.name.toUpperCase().includes(championName.toUpperCase()));
     });
 
   }
+
+  private getChampions() {
+    this.championService.getAll()
+    .subscribe((res) => {
+
+          // Populate our `Champions` array with the `response` data
+          this.allChampions = res;
+          this.champions = this.allChampions;
+    });
+  }
+
+
 
 }

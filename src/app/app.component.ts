@@ -1,12 +1,12 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import {AppState} from './app.service';
+import { AppState } from './app.service';
 
 // Import Champion component
-import {Champion} from './champion/champion.component';
+import { Champion } from './champion/champion.component';
 
-import {AuthService} from './auth/auth.service';
+import { AuthService } from './auth/auth.service';
 
 /*
  * App Component
@@ -22,5 +22,5 @@ import {AuthService} from './auth/auth.service';
 export class App {
   angularLogo = 'assets/img/angular-logo.png';
 
-  constructor(public authService: AuthService){}
+  constructor(public authService: AuthService) { }
 }

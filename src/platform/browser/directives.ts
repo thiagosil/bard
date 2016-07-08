@@ -1,8 +1,8 @@
-//# Global Directives
+// # Global Directives
 //
-//** These `directives` are available in any template **
+// ** These `directives` are available in any template **
 
-import {PLATFORM_DIRECTIVES} from '@angular/core';
+import { PLATFORM_DIRECTIVES } from '@angular/core';
 
 // APPLICATION_DIRECTIVES
 //

@@ -31,13 +31,11 @@ export class ChampionService {
           .map(res => res.json());
   }
 
-  private getLolKingUrl(championName: string): string
-  {
-      return `http://www.lolking.net/guides/champion/${championName}`;
+  private getLolKingUrl(championName: string): string {
+    return `http://www.lolking.net/guides/champion/${championName}`;
   }
 
-  private getImageUrl(championName: string): string
-  {
-  return `http://ddragon.leagueoflegends.com/cdn/6.13.1/img/champion/${championName}.png`;
+  private getImageUrl(championName: string): string {
+    return `http://ddragon.leagueoflegends.com/cdn/6.13.1/img/champion/${championName}.png`;
   }
 }

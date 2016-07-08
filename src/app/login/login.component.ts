@@ -20,7 +20,7 @@ export class Login {
   login(event, username, password) {
     event.preventDefault();
 
-    //todo call auth.service
+    // todo call auth.service
     let body = JSON.stringify({ username, password });
     this.http.post('/api/auth/login', body, { headers: contentHeaders })
       .subscribe(
